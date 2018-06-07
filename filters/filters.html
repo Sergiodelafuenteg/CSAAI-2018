@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Filters</title>
+    <link rel="stylesheet" href="filters.css">
+    <script src="filters.js"></script>
+    <h1>Dont touch the pictures!</h1>
+  </head>
+  <body onload="Load()">
+
+
+    <div>
+      <canvas id="c2" width="360" height="316"/>
+    </div>
+    <p id = "text">Click on any image</p>
+    <div id="aux-img">
+      <img id="aux1" src="Miro.jpg" width="10%" height="10%" onclick="ChooseImg(1)">
+      <img id="aux2" src="picasso.jpg" width="10%" height="10%" onclick="ChooseImg(2)">
+      <img id="aux3" src="gogh.jpg" width="17%" height="17%" onclick="ChooseImg(3)">
+      <img id="aux4" src="vulcan.jpg" width="17%" height="17%" onclick="ChooseImg(4)">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sergio</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="cv.css">
+    <link rel="stylesheet" href="animate.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  </head>
+  <body>
+    <div id='app'>
+      <div class="init" v-show="mostrar_init">
+        <br><button class="init_butt animated bounceInUp" @click="switchpanel('qs')">Quien soy</button><br>
+        <button class="init_butt animated bounceInLeft" @click="switchpanel('cono')">Conocimientos</button><br>
+        <button class="init_butt animated bounceInRight" @click="switchpanel('expe')">Experiencia laboral</button><br>
+        <button class="init_butt animated bounceInDown" @click="switchpanel('proy')">Mis proyectos</button>
+      </div>
+<!-- Container (qsoy) -->
+      <div id ="container1" v-if="mostrar_qsoy" class="animated bounceInDown">
+        <button type="button" class="btn btn-default btn-block fa fa-angle-left"
+                @click = "back_to_menu" style="font-size:80px"></button>
+        <div id="about" class="container-fluid">
+          <div class="row">
+            <div class="col-sm-8">
+              <h1>Datos Personales</h1>
+              <h3>
+                <ul>
+                  <li class="dat_person">Nombre: Sergio</li>
+                  <li class="dat_person">Apellidos: de la fuente</li>
+                  <li class="dat_person">Fecha de nacimiento: 12 - 8 - 1990</li>
+                </ul>
+              </h3>
+
+            </div>
+            <div class="col-sm-4">
+              <img src="bender.png" alt="bender">
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid bg-grey">
+          <div class="row">
+            <div class="col-sm-6">
+              <i class="fa fa-address-card-o" style="font-size:200px;color:grey;text-align:center;"></i>
+            </div>
+            <div class="col-sm-6">
+              <h1>Datos de Contacto</h1>
+              <h3><ul>
+                <li class="dat_person">Dirección: @@@@@@@@@</li>
+                <li class="dat_person">Telefono: #######</li>
+                <li class="dat_person">E-mail: s.delafuenteg@alumnos.urjc.es</li>
+              </ul>
+            </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Container (conoc) -->
+      <div id="container2" v-if="mostrar_conoc" class="animated bounceInLeft">
+        <button type="button" class="btn btn-default btn-block fa fa-angle-left"
+                @click = "back_to_menu" style="font-size:80px"></button>
+        <div id="about" class="container-fluid">
+          <div class="row">
+            <div class="col-sm-8">
+              <h1>Estudios</h1>
+              <h3>
+                <ul>
+                  <li class="dat_person">Graduado escolar y enseñanza obligatoria</li>
+                  <li class="dat_person">Modulo superior de Sonido</li>
+                  <li class="dat_person">Actualmente: Ing. sistemas audiovisuales</li>
+                </ul>
+              </h3>
+
+            </div>
+            <div class="col-sm-4">
+              <i class="fa fa-graduation-cap" style="font-size:200px;color:grey;text-align:center;"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid bg-grey">
+          <div class="row">
+            <div class="col-sm-6">
+              <i class="fa fa-line-chart" style="font-size:200px;color:grey;padding-left: 55px;"></i>
+            </div>
+            <div class="col-sm-6">
+              <h1>Otros</h1>
+              <h3><ul>
+                <li class="dat_person">Bilingüe en Inglés</li>
+                <li class="dat_person">Dominio de Javascript, ADA, python y un poco de shell</li>
+                <li class="dat_person">Actualmente: Curso de Vue2.js</li>
+              </ul>
+            </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Container (expe) -->
+    <div id="container3" v-if="mostrar_expe" class="animated bounceInRight">
+      <button type="button" class="btn btn-default btn-block fa fa-angle-left"
+              @click = "back_to_menu" style="font-size:80px"></button>
+      <div id="about" class="container-fluid">
+        <div class="row">
+          <div class="col-sm-8">
+            <h1>Actualmente</h1>
+            <h3>
+              <ul>
+                <li class="dat_person">Desde 2014 trabajo como profesor de matematicas en una academia</li>
+              </ul>
+            </h3>
+
+          </div>
+          <div class="col-sm-4">
+            <i class="fa fa-superscript" style="font-size:200px;color:grey;text-align:center;"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid bg-grey">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1>Otros</h1>
+            <h3><ul>
+              <li class="dat_person">2013 - Gestiona radio, grupo COPE. Tecnico de Sonido a
+              tiempo completo especializado en directos y coberturas en exteriores, además
+              de grabaciones de cuñas publicitarias.</li>
+              <li class="dat_person">2012 - Radio Vaughan y Vaughan Systems. Tecnico de Sonido
+              tanto en directos como en postproduccion para material interno.</li>
+            </ul>
+          </h3>
+          </div>
+          <div class="col-sm-6">
+            <h3><ul>
+              <li class="dat_person">2009 - Teranga. Tienda de Comercio justo, desempeñaba la
+              labor de dependiente.</li>
+              <li class="dat_person">2006-2008 - Fuenal. A tiempo parcial en una empresa familiar.</li>
+            </ul>
+          </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Container (proy) -->
+    <div id="container4" v-if="mostrar_proy" class="animated bounceInUp">
+      <button type="button" class="btn btn-default btn-block fa fa-angle-left"
+              @click = "back_to_menu" style="font-size:80px"></button>
+      <div id="about" class="container-fluid text-center">
+        <img src="git.png" alt="git" width="10%" height="10%" style="padding-bottom:20px;">
+        <br><button type="button" id="but_git" onclick="location.href='https://github.com/Sergiodelafuenteg'">
+          Ir a mi Github</button>
+      </div>
+
+      <div class="container-fluid bg-grey text-center">
+        <p>Date un paseo y disfruta de mis juegos</p>
+        <div class="row">
+          <div class="col-sm-4">
+            <img src="pac.png" alt="pac" class="img-responsive margin"
+            width="80%" height="80%">
+          </div>
+          <div class="col-sm-4">
+            <img src="ast.png" alt="ast" class="img-responsive margin"
+             width="80%" height="80%">
+          </div>
+          <div class="col-sm-4">
+            <img src="maze.png" alt="maze" class="img-responsive margin"
+            width="80%" height="80%">
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Cierre div APP -->
+    </div>
+<!-- Cierre div VUE -->
+  </body>
+  <script src="cv.js" charset="utf-8"></script>
+</html>
